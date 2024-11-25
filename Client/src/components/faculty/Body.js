@@ -15,6 +15,11 @@ const Body = () => {
   const [open, setOpen] = useState(false);
   const [openNotice, setOpenNotice] = useState({});
   const notices = useSelector((state) => state.admin.notices.result);
+  const students = useSelector((state) => state.faculty);
+  const classes = useSelector((state) => state.faculty.allClasses);
+  // const subjects = useSelector((state) => state.faculty.allSubjects);
+  const test = useSelector((state) => state.faculty.getTest);
+  const subjects = useSelector((state) => state.admin.subjects);
 
   return (
     <div className="flex-[0.8] mt-3">
@@ -32,7 +37,7 @@ const Body = () => {
               />
               <div className="flex flex-col">
                 <h1>Class</h1>
-                <h2 className="text-2xl font-bold">12</h2>
+                <h2 className="text-2xl font-bold">3</h2>
               </div>
             </div>
             <div className="flex items-center space-x-4 border-r-2">
@@ -42,7 +47,7 @@ const Body = () => {
               />
               <div className="flex flex-col">
                 <h1>Student</h1>
-                <h2 className="text-2xl font-bold">10</h2>
+                <h2 className="text-2xl font-bold">3</h2>
               </div>
             </div>
             <div className="flex items-center space-x-4 border-r-2">
@@ -52,7 +57,7 @@ const Body = () => {
               />
               <div className="flex flex-col">
                 <h1>Subject</h1>
-                <h2 className="text-2xl font-bold">5</h2>
+                <h2 className="text-2xl font-bold">7</h2>
               </div>
             </div>
             <div className="flex items-center space-x-4 ">
@@ -62,7 +67,7 @@ const Body = () => {
               />
               <div className="flex flex-col">
                 <h1>Test</h1>
-                <h2 className="text-2xl font-bold">3</h2>
+                <h2 className="text-2xl font-bold">4</h2>
               </div>
             </div>
           </div>

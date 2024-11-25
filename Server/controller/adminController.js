@@ -128,11 +128,12 @@ export const addAdmin = async (req, res) => {
     var date = new Date();
     var components = ["ADM", date.getFullYear(), departmentHelper, helper];
 
-    var username = components.join("");
+    // var username = components.join("");
+    var username = name;
     let hashedPassword;
-    const newDob = dob.split("-").reverse().join("-");
+    // const newDob = dob.split("-").reverse().join("-");
 
-    hashedPassword = await bcrypt.hash(newDob, 10);
+    hashedPassword = await bcrypt.hash(name, 10);
     var passwordUpdated = false;
     const newAdmin = await new Admin({
       name,
@@ -281,13 +282,14 @@ export const addFaculty = async (req, res) => {
       helper = faculties.length.toString();
     }
     var date = new Date();
-    var components = ["FAC", date.getFullYear(), departmentHelper, helper];
+    // var components = ["FAC", date.getFullYear(), departmentHelper, helper];
 
-    var username = components.join("");
+    // var username = components.join("");
+    var username = name;
     let hashedPassword;
-    const newDob = dob.split("-").reverse().join("-");
+    // const newDob = dob.split("-").reverse().join("-");
 
-    hashedPassword = await bcrypt.hash(newDob, 10);
+    hashedPassword = await bcrypt.hash(name, 10);
     var passwordUpdated = false;
 
     const newFaculty = await new Faculty({
@@ -543,13 +545,14 @@ export const addStudent = async (req, res) => {
       helper = students.length.toString();
     }
     var date = new Date();
-    var components = ["STU", date.getFullYear(), departmentHelper, helper];
+    // var components = ["STU", date.getFullYear(), departmentHelper, helper];
 
-    var username = components.join("");
+    // var username = components.join("");
+    var username = name;
     let hashedPassword;
-    const newDob = dob.split("-").reverse().join("-");
+    // const newDob = dob.split("-").reverse().join("-");
 
-    hashedPassword = await bcrypt.hash(newDob, 10);
+    hashedPassword = await bcrypt.hash(name, 10);
     var passwordUpdated = false;
 
     const newStudent = await new Student({
